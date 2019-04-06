@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Header from "./Header";
 import News from "./News";
+import Form from "./Form";
 
 class App extends Component {
 
@@ -12,18 +13,9 @@ class App extends Component {
         this.getTopHeadlines();
     }
 
-    /*
-        componentDidUpdate(prevProps, prevState, snapshot) {
-            if (prevState.news === this.state.news){
-            }else {
-                this.getTopHeadlines();
-            }
-        }
-    */
+    getTopHeadlines = (category = 'general') => {
 
-    getTopHeadlines = () => {
         const apiKey = 'YOUR_API_KEY';
-        const category = 'general';
         const country = 'co';
         const urlNews = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`;
         fetch(urlNews)
@@ -48,6 +40,9 @@ class App extends Component {
                     title="Noticias"
                 />
                 <div className="container white contenedor-noticias ">
+                    <Form
+                        getTopHeadlines={this.getTopHeadlines}
+                    />
                     <News
                         news={this.state.news}
                     />
