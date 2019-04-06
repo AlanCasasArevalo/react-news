@@ -22,6 +22,7 @@ class App extends Component {
     */
 
     getTopHeadlines = () => {
+        const apiKey = 'YOUR_API_KEY';
         const category = 'general';
         const country = 'co';
         const urlNews = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`;
