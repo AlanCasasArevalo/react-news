@@ -6,7 +6,7 @@ class News extends Component {
     render() {
         const news = this.props.news;
         return (
-            <div>
+            <div className="row">
                 {Object.keys(news).map(newToSend => (
                     <New
                         key={newToSend}

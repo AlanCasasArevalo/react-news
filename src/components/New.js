@@ -16,7 +16,6 @@ class New extends Component {
 
         if (author && typeof author !== 'undefined' && content && typeof content !== 'undefined') {
             return (
-                <div className="col s12 m6 l4">
                     <div className="card">
                         <div className="card-image">
                             <img src={imageUrl} alt={alt}/>
@@ -32,7 +31,6 @@ class New extends Component {
                             <a href={url} target="_blank" className="waves-effects waves-light btn"> Leer Mas </a>
                         </div>
                     </div>
-                </div>
             )
         } else {
             return null
@@ -41,7 +39,7 @@ class New extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="col s12 m6 l4">
                 {this.showResults()}
             </div>
         );
