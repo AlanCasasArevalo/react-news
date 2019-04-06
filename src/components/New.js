@@ -9,20 +9,28 @@ class New extends Component {
         const content = newReceived.content;
         const description = newReceived.description;
         const title = newReceived.title;
+        const url = newReceived.url;
         const source = newReceived.source.name;
         let imageUrl = newReceived.urlToImage;
         const alt = `imagen de la noticia ${newReceived.title}`
 
         if (author && typeof author !== 'undefined' && content && typeof content !== 'undefined') {
             return (
-                <div className="row">
-                    <div className="card-panel light-blue align-center">
-                        <span className="white-text">
-                            <h2>{title}</h2>
+                <div className="col s12 m6 l4">
+                    <div className="card">
+                        <div className="card-image">
                             <img src={imageUrl} alt={alt}/>
+                            <span className="card-title">
+                                {source}
+                            </span>
+                        </div>
+                        <div className="card-content">
+                            <h3>{title}</h3>
                             <p> {description} </p>
-                            <p>{source}</p>
-                        </span>
+                        </div>
+                        <div className="card-action">
+                            <a href={url} target="_blank" className="waves-effects waves-light btn"> Leer Mas </a>
+                        </div>
                     </div>
                 </div>
             )
