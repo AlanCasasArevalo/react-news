@@ -12,25 +12,30 @@ class New extends Component {
         const url = newReceived.url;
         const source = newReceived.source.name;
         let imageUrl = newReceived.urlToImage;
-        const alt = `imagen de la noticia ${newReceived.title}`
+        const alt = `imagen de la noticia ${newReceived.title}`;
+
+        const imageToShow = (imageUrl && typeof imageUrl !== 'undefined')
+            ?
+            <div className="card-image">
+                <img src={imageUrl} alt={alt}/>
+                <span className="card-title">
+                                {source}
+                        </span>
+            </div>
+            : '';
 
         if (author && typeof author !== 'undefined' && content && typeof content !== 'undefined') {
             return (
-                    <div className="card">
-                        <div className="card-image">
-                            <img src={imageUrl} alt={alt}/>
-                            <span className="card-title">
-                                {source}
-                            </span>
-                        </div>
-                        <div className="card-content">
-                            <h3>{title}</h3>
-                            <p> {description} </p>
-                        </div>
-                        <div className="card-action">
-                            <a href={url} target="_blank" className="waves-effects waves-light btn"> Leer Mas </a>
-                        </div>
+                <div className="card">
+                    {imageToShow}
+                    <div className="card-content">
+                        <h3>{title}</h3>
+                        <p> {description} </p>
                     </div>
+                    <div className="card-action">
+                        <a href={url} target="_blank" className="waves-effects waves-light btn"> Leer Mas </a>
+                    </div>
+                </div>
             )
         } else {
             return null
