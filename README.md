@@ -4,6 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### PREVIEW
+![](https://github.com/AlanCasasArevalo/react-news/blob/master/React%20News.gif)
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
@@ -66,3 +69,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### Thanks to:
+
+https://newsapi.org
